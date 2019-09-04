@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px avenir;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.browser text {
+  text-anchor: end;
+}
+
+rect {
+  opacity: 0.2;
+}
+
+.line {
+	fill: none;
+	stroke-width: 1px;
+}
+
+.axis path {
+	stroke: black;
+	stroke-width: 1px;
+	fill: none;
+	shape-rendering: crispEdges;
+}
+
+.tick line {
+	stroke: black;
+	stroke-width: 1px;
+}
+</style>
+<div id="stackedtimeline">
+	<select onchange="location = this.options[this.selectedIndex].value;">
+	  <option value=".">Dataset1 (AWS EC2)</option>
+	  <option value="dataset2/">Dataset2 (PC system performance)</option>
+	</select>
+	<a href="Classification 1/mlindex.html" style="float: right; padding: 10px; font-size:20px" target="_blank">Predict similar node</a>
+	<a href="dataset1_statistical/combined.html" style="float: right; padding: 10px; font-size:20px" target="_blank">Statistical plot</a>
+</div> <!--cpu_usr -->
+<div id="behavioural"></div> <!--cpu_usr -->
+<div id="area1"></div> <!--cpu_usr -->
+<div id="area2"></div> <!--cpu_idle-->
+<div id="area3"></div> <!--cpu_sys-->
+<div id="area4"></div> <!--cpu_iowait-->
+<div id="area5"></div> <!--cpu_steal-->
+<div id="area6"></div> <!--paging_vmeff-->
+<div id="area7"></div> <!--memory_commit-->
+<div id="area8"></div> <!--disk_util-->
+<div id="area9"></div> <!--network_ifutil-->
+<div id="area10"></div> <!--memory_memused-->
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="stacket_timeline.js"></script>
+<script src="behavioural.js"></script>
+<script src="Detailedplot/detailedplt.js"></script>

@@ -1,0 +1,182 @@
+<script>
+function color(color_type){
+    if (color_type == 'cpu_iowait'){
+        document.getElementById('cpu_iowait').style.display = 'block';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    } 
+    else if (color_type == 'cpu_idle'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'block';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'cpu_steal'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'block';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'cpu_sys'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'block';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'cpu_usr'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'block';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'disk_util'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'block';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'memory_commit'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'block';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'memory_memused'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'block';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'network_ifutil'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'block';
+        document.getElementById('pging').style.display = 'none';
+    }
+    else if (color_type == 'pging'){
+        document.getElementById('cpu_iowait').style.display = 'none';
+        document.getElementById('cpu_idle').style.display = 'none';
+        document.getElementById('cpu_steal').style.display = 'none';
+        document.getElementById('cpu_sys').style.display = 'none';
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('disk_util').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+        document.getElementById('network_ifutil').style.display = 'none';
+        document.getElementById('pging').style.display = 'block';
+    }
+}
+</script>
+
+<select onchange="color(this.value)">
+    <option name="choice1" value="cpu_idle" >cpu_idle</option>
+    <option name="choice2" value="cpu_iowait" >cpu_iowait</option>
+    <option name="choice3" value="cpu_steal" >cpu_steal</option>
+    <option name="choice4" value="cpu_sys" >cpu_sys</option>
+    <option name="choice5" value="cpu_usr" >cpu_usr</option>
+    <option name="choice6" value="disk_util" >disk_util</option>
+    <option name="choice7" value="memory_commit" >memory_commit</option>
+    <option name="choice8" value="memory_memused" >memory_memused</option>
+    <option name="choice9" value="network_ifutil" >network_ifutil</option>
+    <option name="choice10" value="pging" >pging</option>
+</select>
+</select>
+</select>
+</select>
+
+</select>
+
+<div id="cpu_idle" style="display:block;">
+    <iframe src="cpu_idle_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="cpu_iowait" style="display:none;">
+    <iframe src="cpu_iowait_multiline.html" style="height: 400px; width: 800px; border: none"></iframe>
+</div>
+
+<div id="cpu_steal" style="display:none;">
+    <iframe src="cpu_steal_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="cpu_sys" style="display:none;">
+    <iframe src="cpu_sys_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="disk_util" style="display:none;">
+    <iframe src="disk_util_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="memory_commit" style="display:none;">
+    <iframe src="memory_commit_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="memory_memused" style="display:none;">
+    <iframe src="memory_memused_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="network_ifutil" style="display:none;">
+    <iframe src="network_ifutil_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="pging" style="display:none;">
+    <iframe src="pging_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="cpu_usr" style="display:none;">
+    <iframe src="cpu_usr_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="http://d3js.org/d3.v3.js"></script>
+
+<p>Add a node to test the performance of the cloud system</p>
+
+<form action="/forward/" method="get">
+      <fieldset>
+          <p>
+             <label>Select a node from the set of nodes available to add into the system</label>
+             <select id = "myList">
+               <option value = "Node_test2">Node 5</option>
+               <option value = "Node_test1">Node 6</option>
+               <option value = "Node_test3">Node 7</option>
+             </select>
+          </p>
+      </fieldset>
+</form>
+
+<br><center><button onclick = "runPyScript()">Check performance</button>
+</center><br>
+<div id = 'predictdiv' style="padding-bottom: 20px"></div>
+<div id="area1"></div> <!--cpu_usr -->
+<div id="area2"></div> <!--cpu_idle-->
+<div id="area3"></div> <!--cpu_sys-->
+<div id = 'resultdiv'></div>
+<script>
+function runPyScript(){
+    var input = document.getElementById("myList").value;
+    var resultNode;
+    console.log(input)
+    var url = "http://ec2-34-230-13-41.compute-1.amazonaws.com:5001/getPerformance?value="+input
+
+    $.get(url, function(responseText) {
+        var result = responseText.split("::");
+        var df = result[1];
+        var perf = result[0];
+        console.log(new DOMParser().parseFromString(df, "text/html"));
+        resultNode = "Node"+result[0].split(":")[2].replace(/\s/g, '');
+    
+        document.getElementById('predictdiv').innerHTML = result[0];
+        document.getElementById('resultdiv').appendChild(new DOMParser().parseFromString(df, "text/html").firstChild);
+        loadDetailedCharts(resultNode);
+    });
+
+}
+</script>
+<style> /* set the CSS */
+
+body { font: 12px Arial;}
+
+path {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+
+
+</style>
+<script src="Detailedplot2/detailedplt.js"></script>
+</body>
+</html> 

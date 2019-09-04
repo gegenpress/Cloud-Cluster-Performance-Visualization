@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+body { font: 12px Arial;}
+
+path {
+  stroke: steelblue;
+	stroke-width: 2;
+	fill: none;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+
+
+</style>
+
+<div id="area1"></div> <!--cpu_usr -->
+<div id="area2"></div> <!--cpu_idle-->
+<div id="area3"></div> <!--cpu_sys-->
+<div id="area4"></div> <!--cpu_iowait-->
+<div id="area5"></div> <!--cpu_steal-->
+<div id="area6"></div> <!--paging_vmeff-->
+<div id="area7"></div> <!--memory_commit-->
+<div id="area8"></div> <!--disk_util-->
+<div id="area9"></div> <!--network_ifutil-->
+<div id="area10"></div> <!--memory_memused-->
+
+
+<body>
+
+<!-- load the d3.js library -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="detailedplt.js"></script>
+
+</body>

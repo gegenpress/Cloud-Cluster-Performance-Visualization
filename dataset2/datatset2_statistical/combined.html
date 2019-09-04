@@ -1,0 +1,37 @@
+<script>
+function color(color_type){
+   if (color_type == 'cpu_usr'){
+        document.getElementById('cpu_usr').style.display = 'block';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'none';
+    }
+    else if (color_type == 'memory_commit'){
+         document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'block';
+        document.getElementById('memory_memused').style.display = 'none';
+    }
+    else if (color_type == 'memory_memused'){
+        document.getElementById('cpu_usr').style.display = 'none';
+        document.getElementById('memory_commit').style.display = 'none';
+        document.getElementById('memory_memused').style.display = 'block';
+    }
+}
+</script>
+
+<select onchange="color(this.value)">
+    <option name="choice7" value="memory_commit" >memory_commit</option>
+    <option name="choice8" value="memory_memused" >memory_memused</option>
+    <option name="choice5" value="cpu_usr" >cpu_usr</option>
+</select>
+
+<div id="memory_commit" style="display:block;">
+    <iframe src="memory_commit_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="memory_memused" style="display:none;">
+    <iframe src="memory_memused_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
+
+<div id="cpu_usr" style="display:none;">
+    <iframe src="cpu_usr_multiline.html" style="height: 400px; width: 800px; border: none;"></iframe>
+</div>
